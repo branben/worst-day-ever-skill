@@ -4,7 +4,7 @@ Design rationale and anti-patterns for the worst-day-ever splash screen.
 
 ## Design System Choice
 
-The TUI uses the **Linear** design system (loaded via `popular-web-designs` → `templates/linear.app.md`). Linear is the right reference because:
+The TUI uses the **Linear** design system. Linear is the right reference because:
 
 - It is a **dark-native** product (not a light theme with dark mode bolted on)
 - It uses **luminance-based elevation** (not shadow-based) — the correct approach for dark surfaces

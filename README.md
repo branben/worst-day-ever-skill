@@ -156,15 +156,14 @@ The theory is formalized in [UCCT (Unified Contextual Control Theory)](https://a
 
 ## Installation
 
-Copy `SKILL.md` into your agent's skill directory, or use it as a standalone reference:
+Clone the repo and use `SKILL.md` as the task spec for an LLM agent:
 
 ```bash
 git clone https://github.com/branben/worst-day-ever-skill.git
 cd worst-day-ever-skill
-cat SKILL.md | pbcopy   # paste into any LLM session
 ```
 
-Or just paste this into any agent:
+Then paste the assessment prompt into any agent:
 
 ```
 Read SKILL.md and run a worst-day-ever assessment against this project.
@@ -189,8 +188,8 @@ Read SKILL.md and run a worst-day-ever assessment against this project.
 
 ```
 worst-day-ever-skill/
-├── SKILL.md                          # The full skill (paste into any agent)
-├── README.md                         # This file (animated SVG banners)
+├── SKILL.md                          # The full skill (agent task spec)
+├── README.md                         # This file
 ├── LICENSE                           # MIT
 ├── frameworks/
 │   ├── 8-dimensions.md               # Attack dimension reference
@@ -244,7 +243,7 @@ MIT — do whatever you want, just keep the license notice.
 <div align="center">
 
 ```
-  ¯\_(ツ)_/¯  stuff breaks. find it first.
+¯\_(ツ)_/¯  stuff breaks. find it first.
 ```
 
 **[→ SKILL.md](SKILL.md)** &nbsp;&nbsp;|&nbsp;&nbsp; **[→ 8 Dimensions](frameworks/8-dimensions.md)** &nbsp;&nbsp;|&nbsp;&nbsp; **[→ Sample Report](examples/sample-report.md)**

@@ -27,32 +27,32 @@
   },
   "themes": [
     {
-      "id": "score-integrity",
-      "name": "Score Integrity",
-      "icon": "📊",
-      "description": "Scores can be corrupted, manipulated, or behave counterintuitively. An agent's score is the system's only measure of competence — if it can be set to NaN, Infinity, or decays on success, the entire routing system loses credibility.",
-      "match_keywords": ["nan", "infinity", "inf", "replay", "idempotent", "decay", "cascade"]
-    },
-    {
-      "id": "gate-integrity",
-      "name": "Gate Logic",
-      "icon": "🚨",
-      "description": "Access controls can be circumvented or thrash uncontrollably. Gates exist to protect hard tasks from underqualified agents — if force-assign skips the check or the gate oscillates on every result, the protection is illusory.",
-      "match_keywords": ["force", "bypass", "oscillation", "thrash", "gate"]
+      "id": "input-resilience",
+      "name": "Input Resilience",
+      "icon": "🛡️",
+      "description": "Input validation is incomplete or inconsistent across code paths. Empty strings, mid-operation EOF, and different validation rules in set_score vs route_task mean the system behaves differently depending on how you talk to it.",
+      "match_keywords": ["empty", "validation", "mismatch", "eof", "NaN", "Infinity", "boundary"]
     },
     {
       "id": "state-integrity",
       "name": "State Management",
       "icon": "🔄",
       "description": "State changes aren't tracked or reversible. Agent deletion orphans scores, re-registration loses history, and new domains appear silently. The system has no audit trail for its own state mutations.",
-      "match_keywords": ["remove-agent", "delete", "implicitly", "silently", "orphan"]
+      "match_keywords": ["remove-agent", "delete", "implicitly", "silently", "orphan", "state"]
     },
     {
-      "id": "input-handling",
-      "name": "Input Resilience",
-      "icon": "🛡️",
-      "description": "Input validation is incomplete or inconsistent across code paths. Empty strings, mid-operation EOF, and different validation rules in set_score vs route_task mean the system behaves differently depending on how you talk to it.",
-      "match_keywords": ["empty", "validation", "gamma", "mismatch", "eof", "resilience"]
+      "id": "authz-integrity",
+      "name": "Authorization Logic",
+      "icon": "🚨",
+      "description": "Access controls can be circumvented or thrash uncontrollably. Gates exist to protect hard tasks from underqualified agents — if force-assign bypasses the gate or the gate oscillates on every result, the protection is illusory.",
+      "match_keywords": ["force", "bypass", "oscillation", "thrash", "gate", "authN"]
+    },
+    {
+      "id": "data-handling",
+      "name": "Data Integrity",
+      "icon": "📊",
+      "description": "Scores/report data can be corrupted or behave counterintuitively. NaN/Infinity inputs and saturating updates break assumptions downstream. If inputs are not guarded, the entire reporting/routing layer loses credibility.",
+      "match_keywords": ["nan", "infinity", "replay", "idempotent", "decay", "cascade", "corrupt"]
     }
   ],
   "glossary": {

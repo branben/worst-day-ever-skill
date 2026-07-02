@@ -16,9 +16,8 @@ description: |
     machine, gate logic, authZ, lifecycle, or error handling
   - "show me the TUI" — launch `assets/tui.html` as a visual splash
 
-  Do NOT use for: general code review (use review-work), static analysis
-  (use linters), production security audits (use security-review), or
-  debug sessions (use ce-debug).
+  Do NOT use for: general code review, static analysis, production
+  penetration testing, or debug sessions.
 ---
 
 # Worst-Day-Ever
@@ -242,7 +241,7 @@ python scripts/render_report.py \
   --input wde_results.json \
   --output wde_report.html \
   --title "Project Name"
-open wde_report.html
+open wde_report.html || true
 ```
 
 The renderer (`scripts/render_report.py`) is a standalone stdlib script that:
@@ -328,7 +327,7 @@ The render script outputs YAML frontmatter to stderr containing:
 handoff:
   project: Project Name
   assessment_type: worst-day-ever
-  date: 2026-06-29
+  date: "{{DATE}}"
   total_scenarios: 24
   severity_counts:
     CRITICAL: 2
@@ -360,7 +359,7 @@ elevation, hostile-red accents for critical findings.
 - Glitch animation on critical findings
 - Blinking cursor on prompt line
 
-**Usage:** `open assets/tui.html` (macOS) / `xdg-open assets/tui.html` (Linux).
+**Usage:** open `assets/tui.html` from a terminal, or open it directly from your file manager.
 The browser blocks `file://` URLs for local assets — serve with
 `python3 -m http.server` in the skill directory if needed.
 
@@ -372,12 +371,12 @@ The browser blocks `file://` URLs for local assets — serve with
 - After a production incident ("how could this have happened? what else?")
 - Quarterly resilience review of a live system
 
-## Relationship to Other Skills
+## Relationship to Other Techniques
 
-- **`diagnose`** — if a finding reproduces in production, use `diagnose` to root-cause
-- **`tdd`** — recommended tests become TDD test cases for the next session
-- **`improve-codebase-architecture`** — if systemic patterns emerge, hand off architectural recommendations
-- **`request-refactor-plan`** — if findings require significant code changes, produce the plan
+- **Root-cause analysis** — use when a finding reproduces in production
+- **Test-driven development** — recommended tests become TDD cases for the next session
+- **Architecture review** — if systemic patterns emerge, hand off architectural recommendations
+- **Refactoring plans** — if findings require significant code changes, produce an incremental plan
 
 ## Pitfalls
 
